@@ -15,3 +15,4 @@ SELECT * FROM payment_summary
 -- trigger evidence-adjusted priority scoring 20260517115635
 -- trigger reviewer comment cleanup validation 20260517123010
 -- trigger refined reviewer comment validation 20260517123610
+-- trigger simplified summary validation 20260517124044
