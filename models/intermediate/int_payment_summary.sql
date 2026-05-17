@@ -17,3 +17,4 @@ SELECT * FROM payment_summary
 -- trigger refined reviewer comment validation 20260517123610
 -- trigger simplified summary validation 20260517124044
 -- trigger analysis incomplete baseline validation 20260517143336
+-- trigger changed-file trust diagnostics validation 20260517145157
