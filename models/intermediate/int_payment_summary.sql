@@ -21,3 +21,4 @@ SELECT * FROM payment_summary
 -- trigger config error diagnostics happy path validation 20260517150439
 -- trigger discovery mode validation 20260517151233
 -- trigger repo snapshot validation 20260517180840
+-- trigger fixed repo snapshot validation 20260517181645
