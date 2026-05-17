@@ -12,3 +12,4 @@ WITH payment_summary AS (
     GROUP BY customer_id
 )
 SELECT * FROM payment_summary
+-- trigger evidence-adjusted priority scoring 20260517115635
