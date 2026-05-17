@@ -13,3 +13,4 @@ WITH payment_summary AS (
 )
 SELECT * FROM payment_summary
 -- trigger evidence-adjusted priority scoring 20260517115635
+-- trigger reviewer comment cleanup validation 20260517123010
