@@ -18,3 +18,4 @@ SELECT * FROM payment_summary
 -- trigger simplified summary validation 20260517124044
 -- trigger analysis incomplete baseline validation 20260517143336
 -- trigger changed-file trust diagnostics validation 20260517145157
+-- trigger config error diagnostics happy path validation 20260517150439
