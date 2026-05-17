@@ -19,7 +19,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: hiteshsundraaa/semzero-public-alpha-launch@d0fca1f53b3b80cce02453755396dd3d23f9c37f
+      - uses: hiteshsundraaa/semzero-public-alpha-launch@2df0e951ca36679b3e3a456953ddd203b692e6ca
         with:
           mode: shadow
           run-dbt-compile: "true"
