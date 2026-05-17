@@ -1,0 +1,8 @@
+mode: shadow
+comment:
+  sticky: true
+dogfood:
+  repo: pipelinetoinsights/dbt-example
+  target_assumption_family: enum/default drift
+  expected_changed_files:
+    - models/intermediate/int_payment_summary.sql
