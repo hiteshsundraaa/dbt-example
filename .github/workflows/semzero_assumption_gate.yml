@@ -1,0 +1,27 @@
+name: SemZero Assumption Gate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - semzero-repo3-enum-null-test
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  semzero:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: hiteshsundraaa/semzero-public-alpha-launch@b4568369db72ad7a9acfecc9d22109961d691ddf
+        with:
+          mode: shadow
+          run-dbt-compile: "true"
+          extra-pip-packages: "dbt-core dbt-duckdb"
+          dbt-profiles-dir: ".semzero"
