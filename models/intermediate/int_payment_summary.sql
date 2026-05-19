@@ -9,6 +9,6 @@ WITH payment_summary AS (
             ELSE 'pending'
         END AS final_payment_status
     FROM {{ ref('stg_payments') }}
-    GROUP BY customer_id
+    GROUP BY customer_id, payment_status
 )
 SELECT * FROM payment_summary
