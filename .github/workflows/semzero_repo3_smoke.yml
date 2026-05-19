@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 0
 
       - name: Run SemZero Assumption Gate
-        uses: hiteshsundraaa/semzero-public-alpha-launch@main
+        uses: hiteshsundraaa/semzero-public-alpha-launch@542e973
         with:
           mode: shadow
           extra-pip-packages: "dbt-core dbt-duckdb"
