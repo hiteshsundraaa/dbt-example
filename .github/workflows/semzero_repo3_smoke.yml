@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 0
 
       - name: Run SemZero Assumption Gate
-        uses: hiteshsundraaa/semzero-public-alpha-launch@72824a62491ae374b40a35bb07e6b5adfdbf07c5
+        uses: hiteshsundraaa/semzero-public-alpha-launch@6e9436dfd62d66b4c529d6b6517ca1c142f9cbb7
         with:
           mode: shadow
           base-ref: semzero/repo3-smoke-base
