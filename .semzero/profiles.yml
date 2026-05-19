@@ -1,0 +1,7 @@
+ecommerce_project:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: semzero_repo3.duckdb
+      threads: 4
