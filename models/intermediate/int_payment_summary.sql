@@ -1,4 +1,5 @@
 WITH payment_summary AS (
+    -- SemZero format-only smoke: no semantic model change
     SELECT
         customer_id,
         COUNT(payment_id) AS total_payments,
