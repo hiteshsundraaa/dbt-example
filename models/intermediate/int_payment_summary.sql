@@ -1,4 +1,4 @@
-WITH payment_summary AS (
+WITH payments_by_customer AS (
     SELECT
         customer_id,
         COUNT(payment_id) AS total_payments,
@@ -11,4 +11,4 @@ WITH payment_summary AS (
     FROM {{ ref('stg_payments') }}
     GROUP BY customer_id
 )
-SELECT * FROM payment_summary
+SELECT * FROM payments_by_customer
