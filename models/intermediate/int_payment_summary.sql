@@ -6,7 +6,7 @@ WITH payment_summary AS (
         CASE 
             WHEN SUM(CASE WHEN payment_status = 'completed' THEN 1 ELSE 0 END) > 0 
             THEN 'paid'
-            ELSE 'pending'
+            ELSE 'unresolved'
         END AS final_payment_status
     FROM {{ ref('stg_payments') }}
     GROUP BY customer_id

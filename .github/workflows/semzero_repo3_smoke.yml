@@ -1,0 +1,37 @@
+name: SemZero Repo 3 Smoke
+
+on:
+  push:
+    branches:
+      - "semzero/repo3-*"
+  pull_request:
+    paths:
+      - "models/**/*.sql"
+      - "models/**/*.yml"
+      - "models/**/*.yaml"
+      - "dbt_project.yml"
+      - ".semzero/**"
+      - ".github/workflows/semzero_repo3_smoke.yml"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  semzero:
+    name: dbt mutation smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run SemZero Assumption Gate
+        uses: hiteshsundraaa/semzero-public-alpha-launch@523125bea1dedefa6747f8038ee16bfdd2f2754d
+        with:
+          mode: shadow
+          base-ref: semzero/repo3-smoke-base
+          extra-pip-packages: "dbt-core dbt-duckdb"
+          dbt-profiles-dir: ".semzero"
+          artifact-dir: "data/semzero_assumption_gate"
+          post-pr-comment: "true"
