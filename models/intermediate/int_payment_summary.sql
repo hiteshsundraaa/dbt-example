@@ -4,7 +4,7 @@ WITH payment_summary AS (
         COUNT(payment_id) AS total_payments,
         SUM(payment_value) AS total_paid,
         CASE 
-            WHEN SUM(CASE WHEN payment_status = 'completed' THEN 1 ELSE 0 END) > 0 
+            WHEN SUM(CASE WHEN payment_status != 'failed' THEN 1 ELSE 0 END) > 0 
             THEN 'paid'
             ELSE 'pending'
         END AS final_payment_status
