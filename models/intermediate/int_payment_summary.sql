@@ -2,7 +2,7 @@ WITH payment_summary AS (
     SELECT
         customer_id,
         COUNT(payment_id) AS total_payments,
-        SUM(payment_value) AS total_paid,
+        SUM(payment_value * 0.9) AS total_paid,
         CASE 
             WHEN SUM(CASE WHEN payment_status = 'completed' THEN 1 ELSE 0 END) > 0 
             THEN 'paid'
