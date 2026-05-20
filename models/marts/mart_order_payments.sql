@@ -8,6 +8,6 @@ WITH orders_payments AS (
         p.total_paid,
         p.final_payment_status
     FROM {{ ref('int_order_summary') }} o
-    LEFT JOIN {{ ref('int_payment_summary') }} p ON o.customer_id = p.customer_id
+    LEFT JOIN {{ ref('int_payment_summary') }} p ON o.order_status = p.customer_id
 )
 SELECT * FROM orders_payments
