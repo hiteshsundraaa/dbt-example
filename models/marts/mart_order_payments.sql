@@ -1,4 +1,4 @@
-WITH orders_payments AS (
+WITH orders_with_payments AS (
     SELECT
         o.customer_id,
         o.order_status,
@@ -7,7 +7,19 @@ WITH orders_payments AS (
         o.last_order_date,
         p.total_paid,
         p.final_payment_status
-    FROM {{ ref('int_order_summary') }} o
-    LEFT JOIN {{ ref('int_payment_summary') }} p ON o.customer_id = p.customer_id
+    FROM
+        {{ ref('int_order_summary') }} AS o
+    -- SemZero messy join-key smoke: formatting plus compile-safe wrong key.
+    LEFT JOIN
+        {{ ref('int_payment_summary') }} AS p
+        ON o.order_status = p.final_payment_status
 )
-SELECT * FROM orders_payments
+SELECT
+    customer_id,
+    order_status,
+    total_revenue,
+    first_order_date,
+    last_order_date,
+    total_paid,
+    final_payment_status
+FROM orders_with_payments
